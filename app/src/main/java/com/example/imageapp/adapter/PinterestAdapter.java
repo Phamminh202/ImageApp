@@ -1,4 +1,4 @@
-package com.example.imageapp;
+package com.example.imageapp.adapter;
 
 import android.app.Activity;
 import android.view.View;
@@ -8,6 +8,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.example.imageapp.model.Pinterest;
+import com.example.imageapp.R;
 
 import java.util.List;
 
@@ -33,7 +37,7 @@ public class PinterestAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         PinterestHolder pinterestHolder = (PinterestHolder) holder;
         Pinterest pinterest = pinterestList.get(position);
-        pinterestHolder.ivImage.setImageResource(pinterest.getImage());
+        Glide.with(activity).load(pinterest.getImage()).into(pinterestHolder.ivImage);
         pinterestHolder.tvContent.setText(pinterest.getContent());
     }
 

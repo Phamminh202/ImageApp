@@ -1,4 +1,4 @@
-package com.example.imageapp;
+package com.example.imageapp.adapter;
 
 import android.app.Activity;
 import android.view.View;
@@ -7,6 +7,9 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.imageapp.model.ButtonHome;
+import com.example.imageapp.R;
 
 import java.util.List;
 

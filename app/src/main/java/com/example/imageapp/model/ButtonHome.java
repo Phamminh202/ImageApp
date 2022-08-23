@@ -1,4 +1,4 @@
-package com.example.imageapp;
+package com.example.imageapp.model;
 
 public class ButtonHome {
     private String content;

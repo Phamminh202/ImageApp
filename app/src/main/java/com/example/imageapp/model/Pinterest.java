@@ -1,22 +1,22 @@
-package com.example.imageapp;
+package com.example.imageapp.model;
 
 public class Pinterest {
-    private int image;
+    private String image;
     private String content;
 
     public Pinterest() {
     }
 
-    public Pinterest(int image, String content) {
+    public Pinterest(String image, String content) {
         this.image = image;
         this.content = content;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

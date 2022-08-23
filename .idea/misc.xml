@@ -4,10 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable-v24/client_content_button.xml" value="0.1625" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable-v24/client_content_button_null.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable-v24/client_login_button.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable-v24/ic_file_upload.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable-v24/ic_file_upload_gray_30.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable-v24/ic_menu_account.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable-v24/ic_menu_home.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable-v24/ic_menu_message.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable-v24/ic_menu_search.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable/client_detail_follower.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable/client_detail_image.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.164" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/activity_detail.xml" value="0.2" />
         <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/activity_exam.xml" value="0.22418478260869565" />
         <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/activity_login.xml" value="0.22418478260869565" />
         <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/activity_profile.xml" value="0.22418478260869565" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/activity_profile.xml" value="0.2" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/content_detail.xml" value="0.25" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/fragment_first.xml" value="0.25" />
+        <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/fragment_second.xml" value="0.25" />
         <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/home_button.xml" value="0.25" />
         <entry key="..\:/AndroidSEM4/ImageApp/app/src/main/res/layout/home_item.xml" value="0.24895833333333334" />
       </map>
