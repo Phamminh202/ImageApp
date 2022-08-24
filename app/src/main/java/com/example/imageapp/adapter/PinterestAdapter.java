@@ -1,6 +1,7 @@
 package com.example.imageapp.adapter;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -10,8 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.imageapp.event.ImageEvent;
 import com.example.imageapp.model.Pinterest;
 import com.example.imageapp.R;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -54,6 +58,14 @@ public class PinterestAdapter extends RecyclerView.Adapter {
             super(itemView);
             ivImage = itemView.findViewById(R.id.ivImage);
             tvContent = itemView.findViewById(R.id.tvContent);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("TAG", "onClick: "+getAdapterPosition());
+                    Pinterest pinterest = pinterestList.get(getAdapterPosition());
+                    EventBus.getDefault().post(new ImageEvent.PinterestEvent(pinterest));
+                }
+            });
         }
     }
 }

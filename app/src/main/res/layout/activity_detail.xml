@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
-    tools:context=".activity.DetailActivity">
+    tools:context=".activity.DetailActivity"
+    android:background="@color/black">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -112,6 +113,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/tvTitle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:maxLines="2"
@@ -121,6 +123,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/tvContent"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:maxLines="2"
@@ -169,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:text="Other Pins like this"
                 android:textSize="24dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
                 android:layout_gravity="center"

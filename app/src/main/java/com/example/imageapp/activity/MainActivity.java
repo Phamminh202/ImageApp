@@ -7,14 +7,20 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.imageapp.R;
 import com.example.imageapp.adapter.ButtonHomeAdapter;
 import com.example.imageapp.adapter.PinterestAdapter;
+import com.example.imageapp.event.ImageEvent;
 import com.example.imageapp.model.ButtonHome;
 import com.example.imageapp.model.Pinterest;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,4 +99,29 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+    private void goToDetail(Pinterest pinterest) {
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("PINTEREST", pinterest);
+        startActivity(intent);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onImageEvent(ImageEvent.PinterestEvent pinterestEvent) {
+        Pinterest pinterest = pinterestEvent.getPinterest();
+        Log.d("TAG", "onImageEvent: "+pinterest.getContent());
+        goToDetail(pinterest);
+    }
+
 }

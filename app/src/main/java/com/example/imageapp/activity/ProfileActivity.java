@@ -4,11 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.imageapp.R;
 import com.example.imageapp.adapter.PinterestAdapter;
+import com.example.imageapp.event.ImageEvent;
 import com.example.imageapp.model.Pinterest;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,5 +55,28 @@ public class ProfileActivity extends AppCompatActivity {
             pinterestList.add(new Pinterest("https://i.pinimg.com/564x/61/c1/aa/61c1aaad9557346fb2d47feb12037461.jpg","Hình nền galaxy siêu đẹp"));
             pinterestList.add(new Pinterest("https://i.pinimg.com/564x/21/bb/cc/21bbcc993c100ff79f4c42c580ce8a08.jpg","Hình nền galaxy siêu đẹp"));
         }
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+    private void goToDetail(Pinterest pinterest) {
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("PINTEREST", pinterest);
+        startActivity(intent);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onImageEvent(ImageEvent.PinterestEvent pinterestEvent) {
+        Pinterest pinterest = pinterestEvent.getPinterest();
+        Log.d("TAG", "onImageEvent: "+pinterest.getContent());
+        goToDetail(pinterest);
     }
 }

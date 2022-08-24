@@ -1,6 +1,8 @@
 package com.example.imageapp.model;
 
-public class Pinterest {
+import java.io.Serializable;
+
+public class Pinterest implements Serializable {
     private String image;
     private String content;
 
