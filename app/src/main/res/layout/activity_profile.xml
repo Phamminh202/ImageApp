@@ -77,6 +77,7 @@
                                 android:src="@drawable/avata_default" />
                         </androidx.cardview.widget.CardView>
                         <TextView
+                            android:id="@+id/tvUsername"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -91,7 +92,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:paddingTop="0dp"
-                            android:text="username@"
+                            android:digits="abcde.....0123456789"
+                            android:text="\@username"
                             android:textSize="18dp"
                             />
                         <LinearLayout

@@ -3,6 +3,7 @@ package com.example.imageapp.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,12 +29,30 @@ public class LoginActivity extends AppCompatActivity {
                 onLogin();
             }
         });
+        checkLogin();
+
+    }
+    private void checkLogin() {
+        SharedPreferences pref = getSharedPreferences("USER", MODE_PRIVATE);
+        String username = pref.getString("username", null);
+        if (username != null) {
+            goMain();
+            finish();
+        }
+    }
+
+    private void saveData(String username) {
+        SharedPreferences pref = getSharedPreferences("USER", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("username", username);
+        editor.commit();
     }
 
     private void onLogin() {
         String username = etUsername.getText().toString();
         String password = etPassword.getText().toString();
         if ((username.equals("admin")) && password.equals("123")){
+            saveData(username);
             goMain();
         }else {
             Toast.makeText(LoginActivity.this,"Sai tai khoan",Toast.LENGTH_SHORT).show();

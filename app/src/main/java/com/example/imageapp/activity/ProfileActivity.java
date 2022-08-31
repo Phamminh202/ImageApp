@@ -5,8 +5,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.imageapp.R;
 import com.example.imageapp.adapter.PinterestAdapter;
@@ -22,11 +24,14 @@ import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
     private List<Pinterest> pinterestList = new ArrayList<>();
+    TextView tvUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        getUser();
 
         //Data
         initData();
@@ -42,6 +47,15 @@ public class ProfileActivity extends AppCompatActivity {
         rvPinterest.setLayoutManager(layoutManager);
         rvPinterest.setAdapter(pinterestAdapter);
     }
+
+    private void getUser() {
+        SharedPreferences pref = getSharedPreferences("USER", MODE_PRIVATE);
+        String username = pref.getString("username", null);
+        tvUsername= findViewById(R.id.tvUsername);
+        tvUsername.setText(username);
+
+    }
+
     private void initData() {
         for (int i = 0; i < 50; i++) {
             pinterestList.add(new Pinterest("https://i.pinimg.com/564x/f3/76/8c/f3768c928125401cca765cda29359e23.jpg","Hình nền galaxy siêu đẹp"));
